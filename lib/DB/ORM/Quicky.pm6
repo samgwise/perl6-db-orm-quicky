@@ -7,7 +7,7 @@ class DB::ORM::Quicky {
   has $!driver;
    
   method connect(:$driver, :%options) {
-    $!db     = DBIish.connect($driver, |%options, :RaiseError<1>) or die $!;
+    $!db     = DBIish.connect($driver, |%options, :RaiseError(True) or die $!;
     $!driver = $driver;
   }
 
